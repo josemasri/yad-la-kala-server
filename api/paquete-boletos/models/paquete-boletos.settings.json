@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "paquete_boletos",
+  "info": {
+    "name": "PaqueteBoletos",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "precio": {
+      "type": "decimal"
+    },
+    "cantidadBoletos300": {
+      "type": "integer"
+    },
+    "cantidadBoletos350": {
+      "type": "integer"
+    },
+    "cantidadBoletos500": {
+      "type": "integer"
+    },
+    "boletosHotPot": {
+      "type": "integer"
+    },
+    "nombre": {
+      "type": "string"
+    },
+    "valorReal": {
+      "type": "decimal"
+    },
+    "restriccion": {
+      "type": "boolean"
+    }
+  }
+}
