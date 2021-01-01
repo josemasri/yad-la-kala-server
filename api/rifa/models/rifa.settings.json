@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rifas",
+  "info": {
+    "name": "rifa",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "nombre": {
+      "type": "string"
+    },
+    "numerosDisponibles": {
+      "type": "json"
+    },
+    "descripcion": {
+      "type": "richtext"
+    },
+    "precio": {
+      "type": "decimal"
+    },
+    "imagenes": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "numerosTotales": {
+      "type": "integer"
+    }
+  }
+}

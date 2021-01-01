@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "boletos",
+  "info": {
+    "name": "boleto",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "rifa": {
+      "model": "rifa"
+    },
+    "numero": {
+      "type": "integer"
+    },
+    "nombre": {
+      "type": "string"
+    },
+    "mail": {
+      "type": "email"
+    },
+    "pedido": {
+      "type": "richtext"
+    },
+    "celular": {
+      "type": "string"
+    }
+  }
+}
