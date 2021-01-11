@@ -2,7 +2,7 @@
   "kind": "collectionType",
   "collectionName": "paquete_boletos",
   "info": {
-    "name": "PaqueteBoletos",
+    "name": "Paquetes de Boletos",
     "description": ""
   },
   "options": {
@@ -34,6 +34,9 @@
     },
     "restriccion": {
       "type": "boolean"
+    },
+    "imagen": {
+      "type": "string"
     }
   }
 }

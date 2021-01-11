@@ -1,0 +1,17 @@
+{
+  "kind": "collectionType",
+  "collectionName": "hot_pots",
+  "info": {
+    "name": "HotPot"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "siguienteDisponible": {
+      "type": "integer"
+    }
+  }
+}

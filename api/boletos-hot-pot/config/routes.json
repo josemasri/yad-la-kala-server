@@ -1,0 +1,60 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/boletos-hot-pots",
+      "handler": "boletos-hot-pot.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/boletos-hot-pots/count",
+      "handler": "boletos-hot-pot.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/boletos-hot-pots/:id",
+      "handler": "boletos-hot-pot.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/boletos-hot-pots",
+      "handler": "boletos-hot-pot.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/boletos-hot-pot-usuario",
+      "handler": "boletos-hot-pot.createConUsuario",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/boletos-hot-pots/:id",
+      "handler": "boletos-hot-pot.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/boletos-hot-pots/:id",
+      "handler": "boletos-hot-pot.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

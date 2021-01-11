@@ -2,56 +2,48 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/rifas",
-      "handler": "rifa.find",
+      "path": "/voluntarias",
+      "handler": "voluntaria.find",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/boletosComprados",
-      "handler": "rifa.getBoletosComprados",
+      "path": "/voluntarias/count",
+      "handler": "voluntaria.count",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/rifas/count",
-      "handler": "rifa.count",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "GET",
-      "path": "/rifas/:id",
-      "handler": "rifa.findOne",
+      "path": "/voluntarias/:id",
+      "handler": "voluntaria.findOne",
       "config": {
         "policies": []
       }
     },
     {
       "method": "POST",
-      "path": "/rifas",
-      "handler": "rifa.create",
+      "path": "/voluntarias",
+      "handler": "voluntaria.create",
       "config": {
         "policies": []
       }
     },
     {
       "method": "PUT",
-      "path": "/rifas/:id",
-      "handler": "rifa.update",
+      "path": "/voluntarias/:id",
+      "handler": "voluntaria.update",
       "config": {
         "policies": []
       }
     },
     {
       "method": "DELETE",
-      "path": "/rifas/:id",
-      "handler": "rifa.delete",
+      "path": "/voluntarias/:id",
+      "handler": "voluntaria.delete",
       "config": {
         "policies": []
       }

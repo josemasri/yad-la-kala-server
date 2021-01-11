@@ -2,56 +2,48 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/rifas",
-      "handler": "rifa.find",
+      "path": "/venta-efectivos",
+      "handler": "venta-efectivo.find",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/boletosComprados",
-      "handler": "rifa.getBoletosComprados",
+      "path": "/venta-efectivos/count",
+      "handler": "venta-efectivo.count",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/rifas/count",
-      "handler": "rifa.count",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "GET",
-      "path": "/rifas/:id",
-      "handler": "rifa.findOne",
+      "path": "/venta-efectivos/:id",
+      "handler": "venta-efectivo.findOne",
       "config": {
         "policies": []
       }
     },
     {
       "method": "POST",
-      "path": "/rifas",
-      "handler": "rifa.create",
+      "path": "/venta-efectivos",
+      "handler": "venta-efectivo.create",
       "config": {
         "policies": []
       }
     },
     {
       "method": "PUT",
-      "path": "/rifas/:id",
-      "handler": "rifa.update",
+      "path": "/venta-efectivos/:id",
+      "handler": "venta-efectivo.update",
       "config": {
         "policies": []
       }
     },
     {
       "method": "DELETE",
-      "path": "/rifas/:id",
-      "handler": "rifa.delete",
+      "path": "/venta-efectivos/:id",
+      "handler": "venta-efectivo.delete",
       "config": {
         "policies": []
       }

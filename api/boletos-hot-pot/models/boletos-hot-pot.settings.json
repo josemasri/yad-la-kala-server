@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "rifas",
+  "collectionName": "boletos_hot_pots",
   "info": {
-    "name": "rifa",
+    "name": "BoletosHotPot",
     "description": ""
   },
   "options": {
@@ -14,17 +14,20 @@
     "nombre": {
       "type": "string"
     },
-    "descripcion": {
-      "type": "richtext"
-    },
-    "precio": {
-      "type": "decimal"
-    },
-    "numerosTotales": {
-      "type": "integer"
-    },
-    "imagen": {
+    "celular": {
       "type": "string"
+    },
+    "mail": {
+      "type": "email"
+    },
+    "pedido": {
+      "type": "string"
+    },
+    "orderId": {
+      "type": "string"
+    },
+    "numero": {
+      "type": "integer"
     }
   }
 }

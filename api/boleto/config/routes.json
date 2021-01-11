@@ -33,6 +33,30 @@
       }
     },
     {
+      "method": "POST",
+      "path": "/boletos-usuario",
+      "handler": "boleto.createConUsuario",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/comprar-paquete-boletos",
+      "handler": "boleto.comprarPaqueteBoletos",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/comprar-paquete-boletos-usuario",
+      "handler": "boleto.comprarPaqueteBoletosUsuario",
+      "config": {
+        "policies": []
+      }
+    },
+    {
       "method": "PUT",
       "path": "/boletos/:id",
       "handler": "boleto.update",

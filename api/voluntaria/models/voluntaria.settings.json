@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "rifas",
+  "collectionName": "voluntarias",
   "info": {
-    "name": "rifa",
+    "name": "voluntaria",
     "description": ""
   },
   "options": {
@@ -14,16 +14,16 @@
     "nombre": {
       "type": "string"
     },
-    "descripcion": {
-      "type": "richtext"
+    "telefono": {
+      "type": "string"
     },
-    "precio": {
+    "usuario": {
+      "type": "string"
+    },
+    "cantidadVendida": {
       "type": "decimal"
     },
-    "numerosTotales": {
-      "type": "integer"
-    },
-    "imagen": {
+    "password": {
       "type": "string"
     }
   }

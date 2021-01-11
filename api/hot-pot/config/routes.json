@@ -2,56 +2,48 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/rifas",
-      "handler": "rifa.find",
+      "path": "/hot-pots",
+      "handler": "hot-pot.find",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/boletosComprados",
-      "handler": "rifa.getBoletosComprados",
+      "path": "/hot-pots/count",
+      "handler": "hot-pot.count",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/rifas/count",
-      "handler": "rifa.count",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "GET",
-      "path": "/rifas/:id",
-      "handler": "rifa.findOne",
+      "path": "/hot-pots/:id",
+      "handler": "hot-pot.findOne",
       "config": {
         "policies": []
       }
     },
     {
       "method": "POST",
-      "path": "/rifas",
-      "handler": "rifa.create",
+      "path": "/hot-pots",
+      "handler": "hot-pot.create",
       "config": {
         "policies": []
       }
     },
     {
       "method": "PUT",
-      "path": "/rifas/:id",
-      "handler": "rifa.update",
+      "path": "/hot-pots/:id",
+      "handler": "hot-pot.update",
       "config": {
         "policies": []
       }
     },
     {
       "method": "DELETE",
-      "path": "/rifas/:id",
-      "handler": "rifa.delete",
+      "path": "/hot-pots/:id",
+      "handler": "hot-pot.delete",
       "config": {
         "policies": []
       }

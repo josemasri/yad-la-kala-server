@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ventas_efectivo",
+  "info": {
+    "name": "Venta Efectivo",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "voluntaria": {
+      "model": "voluntaria"
+    },
+    "cantidad": {
+      "type": "decimal"
+    },
+    "boletos": {
+      "collection": "boleto"
+    }
+  }
+}

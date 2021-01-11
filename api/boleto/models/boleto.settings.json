@@ -28,6 +28,16 @@
     },
     "celular": {
       "type": "string"
+    },
+    "orderId": {
+      "type": "string"
+    },
+    "voluntaria": {
+      "model": "voluntaria"
+    },
+    "metodoPago": {
+      "type": "string",
+      "default": "tarjeta/paypal"
     }
   }
 }

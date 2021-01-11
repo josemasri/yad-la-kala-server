@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "venta_paquetes",
+  "info": {
+    "name": "ventaPaquete"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "boletos": {
+      "collection": "boleto"
+    },
+    "paquetes_de_boleto": {
+      "model": "paquete-boletos"
+    }
+  }
+}
