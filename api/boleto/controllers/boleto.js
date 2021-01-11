@@ -16,10 +16,8 @@ const validarPago = async (rifaData, idOrden, cantidadBoletos) => {
           "Content-Type": "application/x-www-form-urlencoded",
         },
         auth: {
-          username:
-            "AdhmmWk2-3UlbPxWjENeeFQ-N3wKAKSY8d77wwTeiV-ACFZYgj5gJPKhlFbrox674nZMN0JEQFxP1gVD",
-          password:
-            "EMEB4iTSILNXlycGyk7BJKtQ6iB6z5I-k9VdyrsQP2AkkJJhInXlg6LbU7-TgOXL1kOjg1qC5beA3Wnn",
+          username: process.env.PAYPAL_USER,
+          password: process.env.PAYPAL_PASSWORD,
         },
       }
     );
@@ -56,10 +54,8 @@ const validarPagoPaquete = async (paqueteData, idOrden) => {
           "Content-Type": "application/x-www-form-urlencoded",
         },
         auth: {
-          username:
-            "AdhmmWk2-3UlbPxWjENeeFQ-N3wKAKSY8d77wwTeiV-ACFZYgj5gJPKhlFbrox674nZMN0JEQFxP1gVD",
-          password:
-            "EMEB4iTSILNXlycGyk7BJKtQ6iB6z5I-k9VdyrsQP2AkkJJhInXlg6LbU7-TgOXL1kOjg1qC5beA3Wnn",
+          username: process.env.PAYPAL_USER,
+          password: process.env.PAYPAL_PASSWORD,
         },
       }
     );
