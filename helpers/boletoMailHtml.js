@@ -80,17 +80,14 @@ module.exports = (numerosSeleccionados) => {
             <td align="center" style="padding:0;Margin:0"> 
              <table class="es-content-body" cellspacing="0" cellpadding="0" bgcolor="#ffffff" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#FFFFFF;width:600px"> 
                <tr style="border-collapse:collapse"> 
-                <td style="Margin:0;padding-top:30px;padding-bottom:30px;padding-left:30px;padding-right:30px;background-image:url(https://apwpbsbly4myceibufb3bq-on.drv.tw/images/bg-mail-1.png);background-repeat:no-repeat;background-position:center top" align="left" background="https://apwpbsbly4myceibufb3bq-on.drv.tw/images/bg-mail-1.png"> 
+                <td style="Margin:0;padding-top:30px;padding-bottom:30px;padding-left:30px;padding-right:30px;background-repeat:no-repeat;background-position:center top" align="left"> 
                  <table width="100%" cellspacing="0" cellpadding="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"> 
                    <tr style="border-collapse:collapse"> 
                     <td align="left" style="padding:0;Margin:0;width:540px"> 
                      <table style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-image:url(https://otuoxp.stripocdn.email/content/guids/CABINET_2ba5c6d83c7b404a1c9e4ac77205a637/images/99191536833167609.png);border-color:#EFEFEF;border-style:solid;border-width:2px;background-position:center top;background-repeat:no-repeat" width="100%" cellspacing="0" cellpadding="0" background="https://otuoxp.stripocdn.email/content/guids/CABINET_2ba5c6d83c7b404a1c9e4ac77205a637/images/99191536833167609.png" role="presentation"> 
                        <tr style="border-collapse:collapse"> 
                         <td align="center" style="Margin:0;padding-bottom:15px;padding-top:20px;padding-left:20px;padding-right:20px"><h1 style="Margin:0;line-height:36px;mso-line-height-rule:exactly;font-family:lora, georgia, 'times new roman', serif;font-size:30px;font-style:normal;font-weight:normal;color:#FFFFFF"><br></h1></td> 
-                       </tr> 
-                       <tr style="border-collapse:collapse"> 
-                        <td align="center" style="padding:0;Margin:0;padding-bottom:15px;padding-left:20px;padding-right:20px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:20px;font-family:tahoma, verdana, segoe, sans-serif;line-height:30px;color:#FFFFFF"><span style="font-size:36px"><strong>"You gave, you won".</strong></span><br><span style="font-size:23px">Ya eres un ganador por el simple hecho de participar y ayudar a una novia hacer su sueño realidad..GRACIAS!!!</span></p></td> 
-                       </tr> 
+                       </tr>  
                        <tr style="border-collapse:collapse"> 
                         <td align="center" style="padding:0;Margin:0;font-size:0px"><img class="adapt-img" src="<%= rifa.imagen %>" alt style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" width="205"></td> 
                        </tr> 

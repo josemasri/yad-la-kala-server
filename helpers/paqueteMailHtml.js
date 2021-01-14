@@ -80,7 +80,7 @@ module.exports = (boletos) => {
               <td align="center" style="padding:0;Margin:0"> 
                <table class="es-content-body" cellspacing="0" cellpadding="0" bgcolor="#ffffff" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#FFFFFF;width:600px"> 
                  <tr style="border-collapse:collapse"> 
-                  <td style="Margin:0;padding-top:30px;padding-bottom:30px;padding-left:30px;padding-right:30px;background-image:url(https://apwpbsbly4myceibufb3bq-on.drv.tw/images/bg-mail-1.png);background-repeat:no-repeat;background-position:center top" align="left" background="https://apwpbsbly4myceibufb3bq-on.drv.tw/images/bg-mail-1.png"> 
+                  <td style="Margin:0;padding-top:30px;padding-bottom:30px;padding-left:30px;padding-right:30px;background-repeat:no-repeat;background-position:center top" align="left"> 
                    <table width="100%" cellspacing="0" cellpadding="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"> 
                      <tr style="border-collapse:collapse"> 
                       <td align="left" style="padding:0;Margin:0;width:540px"> 

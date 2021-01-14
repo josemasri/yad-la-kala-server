@@ -13,6 +13,7 @@
   "dependencies": {
     "@paypal/checkout-server-sdk": "^1.0.2",
     "axios": "^0.21.1",
+    "mercadopago": "^1.5.3",
     "strapi": "3.4.0",
     "strapi-admin": "3.4.0",
     "strapi-connector-mongoose": "3.4.0",

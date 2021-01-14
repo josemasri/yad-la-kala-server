@@ -2,6 +2,8 @@ const { default: axios } = require("axios");
 const { parseMultipartData, sanitizeEntity } = require("strapi-utils");
 const boletoMailHtml = require("../../../helpers/boletoMailHtml");
 const paqueteMailHtml = require("../../../helpers/paqueteMailHtml");
+const mercadopago = require("mercadopago");
+mercadopago.configurations.setAccessToken(process.env.MERCADOPAGO_SECRET);
 
 const validarPago = async (rifaData, idOrden, cantidadBoletos) => {
   try {
@@ -135,7 +137,7 @@ module.exports = {
         ctx.request.body
       );
       paqueteMail.push({
-        nombre: "Hot Pot",
+        nombre: "JackPot",
         numero: hotPot[0].siguienteDisponible,
       });
     }
@@ -242,7 +244,7 @@ module.exports = {
           ctx.request.body
         );
         paqueteMail.push({
-          nombre: "Hot Pot",
+          nombre: "Jack Pot",
           numero: hotPot[0].siguienteDisponible,
         });
       } catch (error) {
@@ -301,7 +303,6 @@ module.exports = {
   async create(ctx) {
     const { body } = ctx.request;
     const { numerosSeleccionados, rifa } = body;
-    console.log(body);
     // Obtener precio del boleto de la rifa
     const rifaData = await strapi.services.rifa.findOne({
       id: rifa,
@@ -430,5 +431,28 @@ module.exports = {
       }
     );
     return "ok";
+  },
+
+  async generarPreferenciaMP(ctx) {
+    const { body } = ctx.request;
+
+    // Crea un objeto de preferencia
+    let preference = {
+      items: [
+        {
+          title: "Boleto Rifa",
+          unit_price: body.precio,
+          quantity: 1,
+        },
+      ],
+    };
+
+    try {
+      const res = await mercadopago.preferences.create(preference);
+      return res.body.id;
+    } catch (error) {
+      console.log(error);
+      return ctx.throw(401, "Usuario y/o Contraseña incorrecta");
+    }
   },
 };

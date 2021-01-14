@@ -1,5 +1,8 @@
 "use strict";
 
+const { default: axios } = require("axios");
+const boletoMailHtml = require("../../../helpers/boletoMailHtml");
+
 /**
  * Read the documentation (https://strapi.io/documentation/v3.x/concepts/controllers.html#core-controllers)
  * to customize this controller
@@ -52,7 +55,14 @@ module.exports = {
     const body = ctx.request.body;
 
     try {
-      validarPago(body.orderId);
+      const isValid = await validarPago(body.orderId);
+
+      if (!isValid) {
+        return ctx.throw(
+          400,
+          "No se pudo completar el pago, intentalo de nuevo"
+        );
+      }
 
       // Obtener número de hotPot
       const hotPot = await strapi.services["hot-pot"].find();
@@ -64,14 +74,44 @@ module.exports = {
       body.numero = hotPot[0].siguienteDisponible;
       // Validate paypal
       entity = await strapi.services["boletos-hot-pot"].create(body);
+
+      // Enviar correo
+      const emailTemplate = {
+        subject: "Gracias por tu Donativo",
+        text: `Gracias <%= entity.nombre %> por tu donativo, 
+          Rifa: <%= rifa.nombre %>
+          Boleto: <%= entity.numero %>
+          Donativo: <%= rifa.precio %>
+          
+          Con tu ayuda estas cumpliendo los sueños de muchas novias de la comunidad
+        `,
+        html: boletoMailHtml([hotPot[0].siguienteDisponible]),
+      };
+      // Enviar mail de boletos
+      await strapi.plugins["email"].services.email.sendTemplatedEmail(
+        {
+          from: "Yad La Kala",
+          to: ctx.request.body.mail,
+        },
+        emailTemplate,
+        {
+          rifa: {
+            nombre: 'Jack Pot',
+            precio: 500,
+            imagen: "https://imagenes-yad.s3.us-east-2.amazonaws.com/hot-pot.png"
+          },
+          entity,
+        }
+      );
+
       return entity;
     } catch (error) {
+      console.log(error);
       return ctx.throw(400, "No se pudo completar el pago, intentalo de nuevo");
     }
   },
 
   async createConUsuario(ctx) {
-    let entity;
     const body = ctx.request.body;
 
     // Validar Usuario y password
@@ -104,8 +144,38 @@ module.exports = {
       );
       body.numero = hotPot[0].siguienteDisponible;
       // Validate paypal
-      entity = await strapi.services["boletos-hot-pot"].create(body);
-      return entity;
+      const entity = await strapi.services["boletos-hot-pot"].create(body);
+
+      // Enviar correo
+      const emailTemplate = {
+        subject: "Gracias por tu Donativo",
+        text: `Gracias <%= entity.nombre %> por tu donativo, 
+          Rifa: <%= rifa.nombre %>
+          Boleto: <%= entity.numero %>
+          Donativo: <%= rifa.precio %>
+          
+          Con tu ayuda estas cumpliendo los sueños de muchas novias de la comunidad
+        `,
+        html: boletoMailHtml([hotPot[0].siguienteDisponible]),
+      };
+      // Enviar mail de boletos
+      await strapi.plugins["email"].services.email.sendTemplatedEmail(
+        {
+          from: "Yad La Kala",
+          to: ctx.request.body.mail,
+        },
+        emailTemplate,
+        {
+          rifa: {
+            nombre: 'Jack Pot',
+            precio: 500,
+            imagen: "https://imagenes-yad.s3.us-east-2.amazonaws.com/hot-pot.png"
+          },
+          entity,
+        }
+      );
+
+      return "OK";
     } catch (error) {
       return ctx.throw(400, "No se pudo completar el pago, intentalo de nuevo");
     }
