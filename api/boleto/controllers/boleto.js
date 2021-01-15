@@ -4,39 +4,14 @@ const boletoMailHtml = require("../../../helpers/boletoMailHtml");
 const paqueteMailHtml = require("../../../helpers/paqueteMailHtml");
 const mercadopago = require("mercadopago");
 mercadopago.configurations.setAccessToken(process.env.MERCADOPAGO_SECRET);
+const stripe = require("stripe")(process.env.STRIPE_API);
 
 const validarPago = async (rifaData, idOrden, cantidadBoletos) => {
   try {
     // Login a paypal
-    const params = new URLSearchParams();
-    params.append("grant_type", "client_credentials");
-    const res = await axios.post(
-      `${process.env.PAYPAL_API}/v1/oauth2/token`,
-      params,
-      {
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        auth: {
-          username: process.env.PAYPAL_USER,
-          password: process.env.PAYPAL_PASSWORD,
-        },
-      }
-    );
-    const token = res.data.access_token;
-
-    const { data: orderResData } = await axios.get(
-      `${process.env.PAYPAL_API}/v2/checkout/orders/${idOrden}`,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
-    return (
-      parseFloat(orderResData.purchase_units[0].amount.value) >=
-      cantidadBoletos * rifaData.precio
-    );
+    const paymentIntent = await stripe.paymentIntents.retrieve(idOrden);
+    console.log(paymentIntent);
+    return paymentIntent.amount / 100 >= cantidadBoletos * rifaData.precio;
   } catch (error) {
     console.log(error);
     throw new Error("Ha ocurrido un error al validar el pago");
@@ -46,35 +21,10 @@ const validarPago = async (rifaData, idOrden, cantidadBoletos) => {
 const validarPagoPaquete = async (paqueteData, idOrden) => {
   try {
     // Login a paypal
-    const params = new URLSearchParams();
-    params.append("grant_type", "client_credentials");
-    const res = await axios.post(
-      `${process.env.PAYPAL_API}/v1/oauth2/token`,
-      params,
-      {
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        auth: {
-          username: process.env.PAYPAL_USER,
-          password: process.env.PAYPAL_PASSWORD,
-        },
-      }
-    );
-    const token = res.data.access_token;
 
-    const { data: orderResData } = await axios.get(
-      `${process.env.PAYPAL_API}/v2/checkout/orders/${idOrden}`,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
-    return (
-      parseFloat(orderResData.purchase_units[0].amount.value) >=
-      paqueteData.precio
-    );
+    const paymentIntent = await stripe.paymentIntents.retrieve(idOrden);
+    console.log(paymentIntent);
+    return paymentIntent.amount / 100 >= paqueteData.precio;
   } catch (error) {
     console.log(error);
     throw new Error("Ha ocurrido un error al validar el pago");
@@ -165,7 +115,7 @@ module.exports = {
       html: paqueteMailHtml(paqueteMail),
     };
     // Enviar mail de boletos
-    await strapi.plugins["email"].services.email.sendTemplatedEmail(
+    strapi.plugins["email"].services.email.sendTemplatedEmail(
       {
         from: "Yad La Kala",
         to: ctx.request.body.mail,
@@ -279,7 +229,7 @@ module.exports = {
       html: paqueteMailHtml(paqueteMail),
     };
     // Enviar mail de boletos
-    await strapi.plugins["email"].services.email.sendTemplatedEmail(
+    strapi.plugins["email"].services.email.sendTemplatedEmail(
       {
         from: "Yad La Kala",
         to: ctx.request.body.mail,
@@ -339,7 +289,7 @@ module.exports = {
       html: boletoMailHtml(numerosSeleccionados),
     };
     // Enviar mail de boletos
-    await strapi.plugins["email"].services.email.sendTemplatedEmail(
+    strapi.plugins["email"].services.email.sendTemplatedEmail(
       {
         from: "Yad La Kala",
         to: ctx.request.body.mail,
@@ -419,7 +369,7 @@ module.exports = {
       html: boletoMailHtml(numerosSeleccionados),
     };
     // Enviar mail de boletos
-    await strapi.plugins["email"].services.email.sendTemplatedEmail(
+    strapi.plugins["email"].services.email.sendTemplatedEmail(
       {
         from: "Yad La Kala",
         to: ctx.request.body.mail,
@@ -453,6 +403,23 @@ module.exports = {
     } catch (error) {
       console.log(error);
       return ctx.throw(401, "Usuario y/o Contraseña incorrecta");
+    }
+  },
+
+  async paymentIntent(ctx) {
+    const { body } = ctx.request;
+    try {
+      const paymentIntent = await stripe.paymentIntents.create({
+        amount: body.amount * 100,
+        currency: "mxn",
+      });
+
+      return {
+        clientSecret: paymentIntent.client_secret,
+      };
+    } catch (error) {
+      console.log(error);
+      return ctx.throw(401, "Ha ocurrido un error");
     }
   },
 };

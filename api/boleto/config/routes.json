@@ -57,6 +57,14 @@
       }
     },
     {
+      "method": "POST",
+      "path": "/create-payment-intent",
+      "handler": "boleto.paymentIntent",
+      "config": {
+        "policies": []
+      }
+    },
+    {
       "method": "PUT",
       "path": "/boletos/:id",
       "handler": "boleto.update",

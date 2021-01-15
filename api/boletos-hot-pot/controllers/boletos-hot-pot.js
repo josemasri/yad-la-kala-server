@@ -2,6 +2,7 @@
 
 const { default: axios } = require("axios");
 const boletoMailHtml = require("../../../helpers/boletoMailHtml");
+const stripe = require("stripe")(process.env.STRIPE_API);
 
 /**
  * Read the documentation (https://strapi.io/documentation/v3.x/concepts/controllers.html#core-controllers)
@@ -11,32 +12,9 @@ const boletoMailHtml = require("../../../helpers/boletoMailHtml");
 const validarPago = async (idOrden) => {
   try {
     // Login a paypal
-    const params = new URLSearchParams();
-    params.append("grant_type", "client_credentials");
-    const res = await axios.post(
-      `${process.env.PAYPAL_API}/v1/oauth2/token`,
-      params,
-      {
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        auth: {
-          username: process.env.PAYPAL_USER,
-          password: process.env.PAYPAL_PASSWORD,
-        },
-      }
-    );
-    const token = res.data.access_token;
-
-    const { data: orderResData } = await axios.get(
-      `${process.env.PAYPAL_API}/v2/checkout/orders/${idOrden}`,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
-    return parseFloat(orderResData.purchase_units[0].amount.value) >= 500;
+    const paymentIntent = await stripe.paymentIntents.retrieve(idOrden);
+    console.log(paymentIntent);
+    return paymentIntent.amount / 100 >= 500;
   } catch (error) {
     console.log(error);
     throw new Error("Ha ocurrido un error al validar el pago");
