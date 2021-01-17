@@ -237,7 +237,7 @@ module.exports = {
       emailTemplate,
       {
         entity: { ...ctx.request.body, ...paqueteMail },
-        paquete,
+        paquete: paqueteData,
       }
     );
 
