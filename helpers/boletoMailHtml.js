@@ -118,6 +118,12 @@ module.exports = (numerosSeleccionados) => {
        </tr> 
      </table> 
     </div>  
+    <div>
+      <img src="https://imagenes-yad.s3.us-east-2.amazonaws.com/thanks.png" width="100%" height="100%"></img>
+    </div>
+    <div>
+      <img src="https://imagenes-yad.s3.us-east-2.amazonaws.com/restricciones.png" width="100%" height="100%"></img>
+    </div>
    </body>
   </html>
        `;
