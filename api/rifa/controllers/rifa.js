@@ -19,6 +19,7 @@ module.exports = {
     // Obtener numeros disponibles para la rifa
     const boletosCompradosRes = await strapi.services.boleto.find({
       rifa: id,
+      _limit: -1
     });
     const boletosComprados = boletosCompradosRes
       .map((boleto) => boleto.numero)
@@ -26,11 +27,14 @@ module.exports = {
     return { ...entity, boletosComprados };
   },
   async getBoletosComprados(ctx) {
-    const rifas = await strapi.services.rifa.find();
+    const rifas = await strapi.services.rifa.find({
+      _limit: -1,
+    });
     const boletos = {};
     for (let i = 0; i < rifas.length; i++) {
       const boletosCompradosRes = await strapi.services.boleto.find({
         rifa: rifas[i].id,
+        _limit: -1
       });
       rifas[i].boletosComprados = boletosCompradosRes
         .map((boleto) => boleto.numero)

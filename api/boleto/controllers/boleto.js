@@ -75,7 +75,7 @@ module.exports = {
 
     // crear boletos Hot pot
     for (let i = 0; i < paqueteData.boletosHotPot; i++) {
-      const hotPot = await strapi.services["hot-pot"].find();
+      const hotPot = await strapi.services["hot-pot"].find({_limit: -1});
       // Actualizar el siguiente disponible
       await strapi.services["hot-pot"].update(
         { id: hotPot[0].id },
@@ -183,7 +183,7 @@ module.exports = {
     // crear boletos Hot pot
     for (let i = 0; i < paqueteData.boletosHotPot; i++) {
       try {
-        const hotPot = await strapi.services["hot-pot"].find();
+        const hotPot = await strapi.services["hot-pot"].find({_limit: -1});
         // Actualizar el siguiente disponible
         await strapi.services["hot-pot"].update(
           { id: hotPot[0].id },
