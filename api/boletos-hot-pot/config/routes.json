@@ -34,8 +34,24 @@
     },
     {
       "method": "POST",
+      "path": "/boletos-hot-pot-donativos",
+      "handler": "boletos-hot-pot.createConDonativos",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
       "path": "/boletos-hot-pot-usuario",
       "handler": "boletos-hot-pot.createConUsuario",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/boletos-hot-pot-paypal",
+      "handler": "boletos-hot-pot.createPayPal",
       "config": {
         "policies": []
       }

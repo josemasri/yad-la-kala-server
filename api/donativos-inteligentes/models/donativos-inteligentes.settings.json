@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "donativos_inteligentes",
+  "info": {
+    "name": "Donativos Inteligentes",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "boletos": {
+      "collection": "boleto"
+    },
+    "precio": {
+      "type": "decimal"
+    },
+    "pagado": {
+      "type": "boolean"
+    }
+  }
+}

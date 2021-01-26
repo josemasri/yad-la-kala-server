@@ -34,6 +34,14 @@
     },
     {
       "method": "POST",
+      "path": "/boletos-donativos",
+      "handler": "boleto.createConDonativos",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
       "path": "/boletos-usuario",
       "handler": "boleto.createConUsuario",
       "config": {
@@ -50,8 +58,24 @@
     },
     {
       "method": "POST",
+      "path": "/comprar-paquete-boletos-paypal",
+      "handler": "boleto.comprarPaqueteBoletosPaypal",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
       "path": "/comprar-paquete-boletos-usuario",
       "handler": "boleto.comprarPaqueteBoletosUsuario",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/comprar-paquete-boletos-donativos",
+      "handler": "boleto.comprarPaqueteBoletosDonativos",
       "config": {
         "policies": []
       }

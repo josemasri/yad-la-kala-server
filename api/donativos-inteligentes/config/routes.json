@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/donativos-inteligentes",
+      "handler": "donativos-inteligentes.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/donativos-inteligentes/count",
+      "handler": "donativos-inteligentes.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/donativos-inteligentes/:id",
+      "handler": "donativos-inteligentes.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/donativos-inteligentes",
+      "handler": "donativos-inteligentes.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/donativos-inteligentes/:id",
+      "handler": "donativos-inteligentes.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/donativos-inteligentes/:id",
+      "handler": "donativos-inteligentes.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
