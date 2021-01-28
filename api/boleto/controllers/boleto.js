@@ -191,17 +191,17 @@ module.exports = {
       html: paqueteMailHtml(paqueteMail),
     };
     // Enviar mail de boletos
-    strapi.plugins["email"].services.email.sendTemplatedEmail(
-      {
-        from: "Yad La Kala",
-        to: ctx.request.body.mail,
-      },
-      emailTemplate,
-      {
-        entity: { ...ctx.request.body, ...paqueteMail },
-        paquete,
-      }
-    );
+    // strapi.plugins["email"].services.email.sendTemplatedEmail(
+    //   {
+    //     from: "Yad La Kala",
+    //     to: ctx.request.body.mail,
+    //   },
+    //   emailTemplate,
+    //   {
+    //     entity: { ...ctx.request.body, ...paqueteMail },
+    //     paquete,
+    //   }
+    // );
 
     // TODO: Enviar mail de boletos
     return { ok: true, message: "Paquete comprado con éxito" };
@@ -284,17 +284,17 @@ module.exports = {
       html: paqueteMailHtml(paqueteMail),
     };
     // Enviar mail de boletos
-    strapi.plugins["email"].services.email.sendTemplatedEmail(
-      {
-        from: "Yad La Kala",
-        to: ctx.request.body.mail,
-      },
-      emailTemplate,
-      {
-        entity: { ...ctx.request.body, ...paqueteMail },
-        paquete,
-      }
-    );
+    // strapi.plugins["email"].services.email.sendTemplatedEmail(
+    //   {
+    //     from: "Yad La Kala",
+    //     to: ctx.request.body.mail,
+    //   },
+    //   emailTemplate,
+    //   {
+    //     entity: { ...ctx.request.body, ...paqueteMail },
+    //     paquete,
+    //   }
+    // );
 
     // TODO: Enviar mail de boletos
     return { ok: true, message: "Paquete comprado con éxito" };
@@ -378,18 +378,18 @@ module.exports = {
       html: paqueteMailHtml(paqueteMail),
     };
     // Enviar mail de boletos
-    strapi.plugins["email"].services.email.sendTemplatedEmail(
-      {
-        from: "Yad La Kala",
-        to: "yadlakalah@gmail.com",
-        cc: "alicesrougo@gmail.com",
-      },
-      emailTemplate,
-      {
-        entity: { ...ctx.request.body, ...paqueteMail },
-        paquete: paqueteData,
-      }
-    );
+    // strapi.plugins["email"].services.email.sendTemplatedEmail(
+    //   {
+    //     from: "Yad La Kala",
+    //     to: "yadlakalah@gmail.com",
+    //     cc: "alicesrougo@gmail.com",
+    //   },
+    //   emailTemplate,
+    //   {
+    //     entity: { ...ctx.request.body, ...paqueteMail },
+    //     paquete: paqueteData,
+    //   }
+    // );
 
     return { ok: true, message: "Paquete comprado con éxito" };
   },
@@ -492,17 +492,17 @@ module.exports = {
       html: paqueteMailHtml(paqueteMail),
     };
     // Enviar mail de boletos
-    strapi.plugins["email"].services.email.sendTemplatedEmail(
-      {
-        from: "Yad La Kala",
-        to: ctx.request.body.mail,
-      },
-      emailTemplate,
-      {
-        entity: { ...ctx.request.body, ...paqueteMail },
-        paquete: paqueteData,
-      }
-    );
+    // strapi.plugins["email"].services.email.sendTemplatedEmail(
+    //   {
+    //     from: "Yad La Kala",
+    //     to: ctx.request.body.mail,
+    //   },
+    //   emailTemplate,
+    //   {
+    //     entity: { ...ctx.request.body, ...paqueteMail },
+    //     paquete: paqueteData,
+    //   }
+    // );
 
     return { ok: true, message: "Paquete comprado con éxito" };
   },
@@ -552,17 +552,17 @@ module.exports = {
       html: boletoMailHtml(numerosSeleccionados),
     };
     // Enviar mail de boletos
-    strapi.plugins["email"].services.email.sendTemplatedEmail(
-      {
-        from: "Yad La Kala",
-        to: ctx.request.body.mail,
-      },
-      emailTemplate,
-      {
-        rifa: rifaData,
-        entity: boletos[0],
-      }
-    );
+    // strapi.plugins["email"].services.email.sendTemplatedEmail(
+    //   {
+    //     from: "Yad La Kala",
+    //     to: ctx.request.body.mail,
+    //   },
+    //   emailTemplate,
+    //   {
+    //     rifa: rifaData,
+    //     entity: boletos[0],
+    //   }
+    // );
     return boletos;
   },
 
@@ -611,17 +611,17 @@ module.exports = {
       html: boletoMailHtml(numerosSeleccionados),
     };
     // Enviar mail de boletos
-    strapi.plugins["email"].services.email.sendTemplatedEmail(
-      {
-        from: "Yad La Kala",
-        to: ctx.request.body.mail,
-      },
-      emailTemplate,
-      {
-        rifa: rifaData,
-        entity: boletos[0],
-      }
-    );
+    // strapi.plugins["email"].services.email.sendTemplatedEmail(
+    //   {
+    //     from: "Yad La Kala",
+    //     to: ctx.request.body.mail,
+    //   },
+    //   emailTemplate,
+    //   {
+    //     rifa: rifaData,
+    //     entity: boletos[0],
+    //   }
+    // );
     return boletos;
   },
   async createConUsuario(ctx) {
@@ -691,17 +691,17 @@ module.exports = {
       html: boletoMailHtml(numerosSeleccionados),
     };
     // Enviar mail de boletos
-    strapi.plugins["email"].services.email.sendTemplatedEmail(
-      {
-        from: "Yad La Kala",
-        to: ctx.request.body.mail,
-      },
-      emailTemplate,
-      {
-        rifa: rifaData,
-        entity: boletos[0],
-      }
-    );
+    // strapi.plugins["email"].services.email.sendTemplatedEmail(
+    //   {
+    //     from: "Yad La Kala",
+    //     to: ctx.request.body.mail,
+    //   },
+    //   emailTemplate,
+    //   {
+    //     rifa: rifaData,
+    //     entity: boletos[0],
+    //   }
+    // );
     return "ok";
   },
 
@@ -745,18 +745,18 @@ module.exports = {
       html: boletoMailHtml(numerosSeleccionados),
     };
     // Enviar mail de boletos
-    strapi.plugins["email"].services.email.sendTemplatedEmail(
-      {
-        from: "Yad La Kala",
-        to: "yadlakalah@gmail.com",
-        cc: "alicesrougo@gmail.com",
-      },
-      emailTemplate,
-      {
-        rifa: rifaData,
-        entity: boletos[0],
-      }
-    );
+    // strapi.plugins["email"].services.email.sendTemplatedEmail(
+    //   {
+    //     from: "Yad La Kala",
+    //     to: "yadlakalah@gmail.com",
+    //     cc: "alicesrougo@gmail.com",
+    //   },
+    //   emailTemplate,
+    //   {
+    //     rifa: rifaData,
+    //     entity: boletos[0],
+    //   }
+    // );
     return "ok";
     } catch (error) {
       console.log(error);

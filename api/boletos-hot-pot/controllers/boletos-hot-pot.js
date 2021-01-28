@@ -101,22 +101,22 @@ module.exports = {
         html: boletoMailHtml([hotPot[0].siguienteDisponible]),
       };
       // Enviar mail de boletos
-      await strapi.plugins["email"].services.email.sendTemplatedEmail(
-        {
-          from: "Yad La Kala",
-          to: ctx.request.body.mail,
-        },
-        emailTemplate,
-        {
-          rifa: {
-            nombre: "Jack Pot",
-            precio: 500,
-            imagen:
-              "https://imagenes-yad.s3.us-east-2.amazonaws.com/hot-pot.png",
-          },
-          entity,
-        }
-      );
+      // await strapi.plugins["email"].services.email.sendTemplatedEmail(
+      //   {
+      //     from: "Yad La Kala",
+      //     to: ctx.request.body.mail,
+      //   },
+      //   emailTemplate,
+      //   {
+      //     rifa: {
+      //       nombre: "Jack Pot",
+      //       precio: 500,
+      //       imagen:
+      //         "https://imagenes-yad.s3.us-east-2.amazonaws.com/hot-pot.png",
+      //     },
+      //     entity,
+      //   }
+      // );
 
       return entity;
     } catch (error) {
@@ -163,22 +163,22 @@ module.exports = {
         html: boletoMailHtml([hotPot[0].siguienteDisponible]),
       };
       // Enviar mail de boletos
-      await strapi.plugins["email"].services.email.sendTemplatedEmail(
-        {
-          from: "Yad La Kala",
-          to: ctx.request.body.mail,
-        },
-        emailTemplate,
-        {
-          rifa: {
-            nombre: "Jack Pot",
-            precio: 500,
-            imagen:
-              "https://imagenes-yad.s3.us-east-2.amazonaws.com/hot-pot.png",
-          },
-          entity,
-        }
-      );
+      // await strapi.plugins["email"].services.email.sendTemplatedEmail(
+      //   {
+      //     from: "Yad La Kala",
+      //     to: ctx.request.body.mail,
+      //   },
+      //   emailTemplate,
+      //   {
+      //     rifa: {
+      //       nombre: "Jack Pot",
+      //       precio: 500,
+      //       imagen:
+      //         "https://imagenes-yad.s3.us-east-2.amazonaws.com/hot-pot.png",
+      //     },
+      //     entity,
+      //   }
+      // );
 
       return entity;
     } catch (error) {
@@ -235,22 +235,22 @@ module.exports = {
         html: boletoMailHtml([hotPot[0].siguienteDisponible]),
       };
       // Enviar mail de boletos
-      await strapi.plugins["email"].services.email.sendTemplatedEmail(
-        {
-          from: "Yad La Kala",
-          to: ctx.request.body.mail,
-        },
-        emailTemplate,
-        {
-          rifa: {
-            nombre: "Jack Pot",
-            precio: 500,
-            imagen:
-              "https://imagenes-yad.s3.us-east-2.amazonaws.com/hot-pot.png",
-          },
-          entity,
-        }
-      );
+      // await strapi.plugins["email"].services.email.sendTemplatedEmail(
+      //   {
+      //     from: "Yad La Kala",
+      //     to: ctx.request.body.mail,
+      //   },
+      //   emailTemplate,
+      //   {
+      //     rifa: {
+      //       nombre: "Jack Pot",
+      //       precio: 500,
+      //       imagen:
+      //         "https://imagenes-yad.s3.us-east-2.amazonaws.com/hot-pot.png",
+      //     },
+      //     entity,
+      //   }
+      // );
 
       return "OK";
     } catch (error) {
@@ -296,23 +296,23 @@ module.exports = {
     });
 
       // Enviar mail de boletos
-      await strapi.plugins["email"].services.email.sendTemplatedEmail(
-        {
-          from: "Yad La Kala",
-          to: "yadlakalah@gmail.com",
-          cc: "alicesrougo@gmail.com",
-        },
-        emailTemplate,
-        {
-          rifa: {
-            nombre: "Jack Pot",
-            precio: 500,
-            imagen:
-              "https://imagenes-yad.s3.us-east-2.amazonaws.com/hot-pot.png",
-          },
-          entity,
-        }
-      );
+      // await strapi.plugins["email"].services.email.sendTemplatedEmail(
+      //   {
+      //     from: "Yad La Kala",
+      //     to: "yadlakalah@gmail.com",
+      //     cc: "alicesrougo@gmail.com",
+      //   },
+      //   emailTemplate,
+      //   {
+      //     rifa: {
+      //       nombre: "Jack Pot",
+      //       precio: 500,
+      //       imagen:
+      //         "https://imagenes-yad.s3.us-east-2.amazonaws.com/hot-pot.png",
+      //     },
+      //     entity,
+      //   }
+      // );
 
       return "OK";
     } catch (error) {
